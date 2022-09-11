@@ -57,6 +57,35 @@ class AdminController extends Controller
          return Redirect()->back()->with($notification);
     }
 
+    public function EditChildAdmin($id)
+    {
+         $user=DB::table('users')->where('id',$id)->first();
+         return view('admin.userRole.edit_child_admin',compact('user'));
+    }
+
+    public function UpdateChildAdmin(Request $request)
+    {
+         $id=$request->id;
+         $data=array();
+         $data['name']=$request->name;
+         $data['username']=$request->username;
+         $data['phone']=$request->phone;
+         $data['email']=$request->email;
+         $data['admins']=$request->admins;
+         $data['settings']=$request->settings;
+
+         DB::table('users')->where('id',$id)->update($data);
+         $notification=array(
+                 'message'=>'Child Admin Update Successfully',
+                 'alert-type'=>'success'
+                       );
+        return Redirect()->route('admin.all.child.admin')->with($notification);
+
+
+    }
+
+
+
     
 
 

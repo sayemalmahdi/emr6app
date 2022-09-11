@@ -45,6 +45,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::post('store/child/admin','UserRole\AdminController@StoreAdmin')->name('store.child.admin');
 	Route::get('all/child/admin','UserRole\AdminController@AllChildAdmin')->name('all.child.admin');
 	Route::get('delete/child/admin/{id}', 'UserRole\AdminController@DeleteChildAdmin');
+	Route::get('edit/child/admin/{id}', 'UserRole\AdminController@EditChildAdmin');
+	Route::post('update/child/admin', 'UserRole\AdminController@UpdateChildAdmin')->name('update.child.admin');
 
 
 

@@ -179,7 +179,7 @@
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="{{ asset('public/admin/backend/images') }}/superadmin.png" alt="" width="45" height="45"> </span> 
 									<div class="user-name">
-										<p>Super Admin</p>
+										<p>{{ Auth::user()->name }}</p>
 										<span>Administrator</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>

@@ -22,7 +22,9 @@
               </li>
 
 
-			       <li class="treeview">
+
+              @if(Auth::user()->admins == 1)
+			        <li class="treeview">
                 <a href="#">
                 <i class="fa fa-user"></i>
                 <span>Admins</span>
@@ -33,8 +35,10 @@
                   <li><a href="{{ route('admin.all.child.admin') }}"><i class="fa fa-angle-right"></i> List Admins</a></li>
                 </ul>
               </li>
+              @else
+              @endif
 
-
+              @if(Auth::user()->settings == 1)
               <li class="treeview">
                 <a href="#">
                 <i class="fa fa-cog"></i>
@@ -46,6 +50,8 @@
                   <li><a href="#"><i class="fa fa-angle-right"></i> Database Backup</a></li>
                 </ul>
               </li>
+              @else
+              @endif
 
 
               <!-- <li class="treeview">

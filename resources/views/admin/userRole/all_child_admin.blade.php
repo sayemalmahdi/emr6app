@@ -1,9 +1,6 @@
-<!-- I add this Bootstrap link when i made site_settings form in admin site settings and also i comment the link -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-
 @extends('admin.master')
 
-@section('title',"SITE SETTING")
+@section('title',"ALL CHILD ADMIN")
 
 @section('dashboardContent')
 <div id="page-wrapper">
@@ -52,7 +49,7 @@
 
                   </td>
                   <td>
-                  	<a href="#" class="btn btn-sm btn-info">edit</a>
+                  	<a href="{{ URL::to('admin/edit/child/admin/'.$row->id) }}" class="btn btn-sm btn-info">edit</a>
                   	<a href="{{ URL::to('admin/delete/child/admin/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">delete</a>
                   </td>
                  
