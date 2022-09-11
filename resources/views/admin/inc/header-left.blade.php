@@ -54,6 +54,23 @@
               @endif
 
 
+
+              @if(Auth::user()->prescriptions == 1)
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-edit"></i>
+                <span>Prescriptions</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-angle-right"></i> Add Prescriptions</a></li>
+                  <li><a href="#"><i class="fa fa-angle-right"></i> List Prescriptions</a></li>
+                </ul>
+              </li>
+              @else
+              @endif
+
+
               <!-- <li class="treeview">
                 <a href="charts.html">
                 <i class="fa fa-pie-chart"></i>

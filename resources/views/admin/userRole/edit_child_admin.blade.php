@@ -73,6 +73,16 @@
                 	</label>
             </div>
 
+
+            <div class="col-lg-4">
+                  <label class="ckbox">
+                    <input type="checkbox" name="prescriptions" value="1" <?php  if ($user->prescriptions == 1) {
+                    echo "checked";
+            }  ?>  >
+                      <span>Prescriptions</span>
+                  </label>
+            </div>
+
             
            
 

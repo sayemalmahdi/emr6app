@@ -15,7 +15,7 @@
 
          <div class="card pd-20 pd-sm-40">
           <!-- <h6 style="" class="card-body-title"><strong>Create New Child Admin</strong>  </h6> <br><br> -->
-          <p class="mg-b-20 mg-sm-b-30"><strong>Create New Child Admin</strong></p> <br><br>
+          <p class="mg-b-20 mg-sm-b-30" style="padding-left: 15px"><strong>Create New Child Admin</strong></p> <br><br>
            <form action="{{ route('admin.store.child.admin') }}" method="post" >
           @csrf
           
@@ -39,13 +39,13 @@
                   <input class="form-control" type="text" name="phone"  required="" placeholder="Phone">
                 </div>
               </div><!-- col-4 -->
-              <div class="col-lg-6">
+              <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Email <span class="tx-danger">*</span></label>
                   <input class="form-control" type="email" name="email"  required="" placeholder="Email">
                 </div>
               </div><!-- col-4 -->
-              <div class="col-lg-6">
+              <div class="col-lg-4">
                 <div class="form-group">
                   <label class="form-control-label">Password <span class="tx-danger">*</span></label>
                   <input class="form-control" type="" name="password"  required="" placeholder="Password">
@@ -58,24 +58,27 @@
 
 
             <div class="row">
-
-	            <div class="col-lg-4">
-	                <label class="ckbox">
-	                  <input type="checkbox" name="admins" value="1">
-	                  <span style="color: red;">Admins</span>
-	                </label>
-	            </div>
-
-            	
-
+  	            <div class="col-lg-4">
+  	                <label class="ckbox">
+  	                  <input type="checkbox" name="admins" value="1">
+  	                  <span style="color: red;">Admins</span>
+  	                </label>
+  	            </div>
+                <div class="col-lg-4">
+                    <label class="ckbox">
+                      <input type="checkbox" name="settings" value="1">
+                        <span>Settings</span>
+                    </label>
+                </div>
+                <div class="col-lg-4">
+                      <label class="ckbox">
+                        <input type="checkbox" name="prescriptions" value="1">
+                          <span>Prescriptions</span>
+                      </label>
+                </div>
             </div>
 
-            <div class="col-lg-4">
-                	<label class="ckbox">
-                 	 	<input type="checkbox" name="settings" value="1">
-                  		<span>Settings</span>
-                	</label>
-            </div>
+            
 
             
            
@@ -83,7 +86,7 @@
             <hr>
 
 
-            <div class="form-layout-footer">
+            <div class="form-layout-footer" style="padding-left: 18px;">
               <button class="btn btn-info mg-r-5" type="submit">Create </button>
             </div>
             <!-- form-layout-footer -->
@@ -95,7 +98,7 @@
 
 
           <!-- <button type="submit" class="btn btn-primary">Create</button> -->
-        </form>
+      
        
       
 

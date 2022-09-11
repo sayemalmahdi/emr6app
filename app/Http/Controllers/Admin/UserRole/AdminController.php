@@ -31,6 +31,7 @@ class AdminController extends Controller
     	 $data['admins']=$request->admins;
     	 
     	 $data['settings']=$request->settings;
+         $data['prescriptions']=$request->prescriptions;
          
          $data['type']=2;
     	 DB::table('users')->insert($data);
@@ -73,6 +74,7 @@ class AdminController extends Controller
          $data['email']=$request->email;
          $data['admins']=$request->admins;
          $data['settings']=$request->settings;
+         $data['prescriptions']=$request->prescriptions;
 
          DB::table('users')->where('id',$id)->update($data);
          $notification=array(

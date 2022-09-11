@@ -34,12 +34,18 @@
                   <td>{{ $row->name }}</td>
                   <td>{{ $row->phone }}</td>
                   <td>
-                    @if($row->admins == 1)
+                      @if($row->admins == 1)
                   	     <span class="badge badge-danger">Admins</span>
                       @else
                       @endif   
-                       @if($row->settings == 1)
+
+                      @if($row->settings == 1)
                          <span class="badge badge-success">Settings</span>
+                      @else
+                      @endif 
+
+                      @if($row->prescriptions == 1)
+                         <span class="badge badge-info">Prescriptions</span>
                       @else
                       @endif 
 
