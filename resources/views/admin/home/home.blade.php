@@ -79,6 +79,20 @@
 
 
 
+<!-- <br> -->
+      
+      <!-- <div class="col-md-12 ">
+        <div class="activity_box activity_box1">
+          <h3>chat</h3>
+          
+         
+        </div>
+      </div>
+      
+      <div class="clearfix"> </div> -->
+      
+   
+
 
 
 

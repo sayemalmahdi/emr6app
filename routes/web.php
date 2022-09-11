@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('login.login');
 });
 
+Route::get('/aboutus', 'AboutUsController@aboutus')->name('aboutus');
+
 
 
 Auth::routes();
@@ -30,6 +32,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Admin Route
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+	
+	//Site Setting
+	Route::get('site/setting','Settings\SiteSettingController@SiteSetting')->name('site.setting');
+	Route::post('update/site/setting','Settings\SiteSettingController@UpdateSiteSetting')->name('update.site.setting');
 
 
 

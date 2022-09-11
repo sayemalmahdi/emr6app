@@ -42,7 +42,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-angle-right"></i> Site Settings</a></li>
+                  <li><a href="{{ route('admin.site.setting') }}"><i class="fa fa-angle-right"></i> Site Settings</a></li>
                   <li><a href="#"><i class="fa fa-angle-right"></i> Database Backup</a></li>
                 </ul>
               </li>

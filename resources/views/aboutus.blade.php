@@ -20,48 +20,64 @@
         <div class="login-box card">
             <div class="card-body">
                 
-               <!--  <a href="javascript:void(0)" class="text-center db" style="margin:20px auto;"> -->
+                <!-- <a href="javascript:void(0)" class="text-center db" style="margin:20px auto;"> -->
 
                 <a href="{{ route('login') }}" class="text-center db" style="margin:20px auto;">
 
     <img src="./public/login/images/sjemrlogo.png" alt="Home" width="150px;"></a>
 
-    
-<form method="POST" action="{{ route('login') }}">
-                        @csrf
+    @php
+	  $setting=DB::table('site_setting')->first();
+	@endphp
 
 
-    <div style="display:none;"><input type="hidden" name="_method" value="POST"><input type="hidden" name="_csrfToken" autocomplete="off" value="7e80810e9453b3bdfa48cdbcbbb8251b1dcacc903c939dbcc803990076f8a48773dc1ab2297126ecd07e53c49ee88ec5fcb1175ac5cbcdd6447de154ef2bf3fb"></div>    <div class="form-group">
-        <div class="input email required"><label for="email">Email</label><input type="email" name="email" class="form-control" placeholder="Username" autofocus="autofocus" tabindex="1" required="required" maxlength="50" id="email"></div>    </div>
-    <div class="form-group">
-        <div class="input password required"><label for="password">Password</label><input type="password" name="password" class="form-control" placeholder="Password" tabindex="2" required="required" id="password"></div>    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <div class="checkbox checkbox-success">
-                    <input type="hidden" name="rememberMe" value="0"><input type="checkbox" name="rememberMe" value="1" id="rememberMe">                    <label for="rememberMe">Remember Me</label>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <a href="https://dev.sjemr.com.bd/users/forgot-password">Forgot Password?</a>            </div>
-        </div>    
-    </div>
+	<form>
+                
+
+	    <div style="display:none;">
+	    	<input type="hidden" name="_method" value="POST">
+	    		<input type="hidden" name="" autocomplete="off" value="">
+	    </div>  
 
 
-    <div class="row m-b-20">
-        <div class="col-md-6">
-            <a href="https://dev.sjemr.com.bd/patients/login">Sign-in as Patient</a>            
-        </div>
-        
-    </div>
-    <button class="btn btn-success waves-effect waves-light m-r-10" tabindex="3" type="submit">Login</button></form>
+    	<div class="form-group">
+	        <div class="input email required">
+	        	<label>Company Name</label>
+	        		<input type="" name="" class="form-control" placeholder="{{ $setting->company_name_en }}"  tabindex="1" >
+	        </div> <br>
+	        <div class="input email required">
+	        	<label>Company Address</label>
+	        		<input type="" name="" class="form-control" placeholder="{{ $setting->company_address }}"  tabindex="1" >
+	        </div> <br>
+	        <div class="input email required">
+	        	<label>Email address</label>
+	        		<input type="" name="" class="form-control" placeholder="{{ $setting->email }}"  tabindex="1" >
+	        </div> <br>
+	        <div class="input email required">
+	        	<label>Phone One</label>
+	        		<input type="" name="" class="form-control" placeholder="{{ $setting->phone_one }}"  tabindex="1" >
+	        </div> <br>
+	        <div class="input email required">
+	        	<label>Phone Two</label>
+	        		<input type="" name="" class="form-control" placeholder="{{ $setting->phone_two }}"  tabindex="1" >
+	        </div> 
+    	</div>
 
-    <br>
+
+   
+   
 
 
-    <button class="btn btn-warning waves-effect waves-light m-r-10" tabindex="3" ><a href="{{ route('aboutus') }}"><i class="fa fa-angle-right"></i>About US</button></form>
+  
+	    <!-- <button class="btn btn-success waves-effect waves-light m-r-10" tabindex="3" type="submit">Go To Login Page</button> -->
+
+	</form>
+
+
+		    <button class="btn btn-warning waves-effect waves-light m-r-10" tabindex="3" >
+		    	<a href="{{ route('login') }}"><i class="fa fa-angle-right"></i>Go To Login Page</button>
+
+    </form>
             </div>
         </div>
     </section>
