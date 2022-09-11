@@ -47,6 +47,16 @@ class AdminController extends Controller
          return view('admin.userRole.all_child_admin',compact('user'));
     }
 
+    public function DeleteChildAdmin($id)
+    {
+         DB::table('users')->where('id',$id)->delete();
+         $notification=array(
+                 'message'=>'Child Admin Delete Successfully',
+                 'alert-type'=>'success'
+                       );
+         return Redirect()->back()->with($notification);
+    }
+
     
 
 

@@ -52,8 +52,8 @@
 
                   </td>
                   <td>
-                  	<a href="" class="btn btn-sm btn-info">edit</a>
-                  	<a href="" class="btn btn-sm btn-danger" id="delete">delete</a>
+                  	<a href="#" class="btn btn-sm btn-info">edit</a>
+                  	<a href="{{ URL::to('admin/delete/child/admin/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">delete</a>
                   </td>
                  
                 </tr>
