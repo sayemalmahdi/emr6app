@@ -11,9 +11,16 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('login.login');
 });
+
+
 
 Auth::routes();
 
