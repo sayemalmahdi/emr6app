@@ -29,7 +29,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-angle-right"></i> Add Admin</a></li>
+                  <li><a href="{{ route('admin.create.admin') }}"><i class="fa fa-angle-right"></i> Add Admin</a></li>
                   <li><a href="#"><i class="fa fa-angle-right"></i> List Admins</a></li>
                 </ul>
               </li>

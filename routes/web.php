@@ -40,6 +40,12 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 
 
 
+	//Child Admin Role
+	Route::get('create/child/admin','UserRole\AdminController@CreateAdmin')->name('create.admin');
+	Route::post('store/child/admin','UserRole\AdminController@StoreAdmin')->name('store.child.admin');
+
+
+
 
 
 });
