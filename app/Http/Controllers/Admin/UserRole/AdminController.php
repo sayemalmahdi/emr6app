@@ -32,7 +32,7 @@ class AdminController extends Controller
     	 
     	 $data['settings']=$request->settings;
          
-         
+         $data['type']=2;
     	 DB::table('users')->insert($data);
     	 $notification=array(
                  'message'=>'Child Admin Create Successfully',
@@ -40,6 +40,14 @@ class AdminController extends Controller
                        );
         return Redirect()->back()->with($notification);
     }
+
+    public function AllChildAdmin()
+    {
+         $user=DB::table('users')->where('type',2)->get();
+         return view('admin.userRole.all_child_admin',compact('user'));
+    }
+
+    
 
 
     

@@ -30,7 +30,7 @@
                 </a>
                 <ul class="treeview-menu">
                   <li><a href="{{ route('admin.create.admin') }}"><i class="fa fa-angle-right"></i> Add Admin</a></li>
-                  <li><a href="#"><i class="fa fa-angle-right"></i> List Admins</a></li>
+                  <li><a href="{{ route('admin.all.child.admin') }}"><i class="fa fa-angle-right"></i> List Admins</a></li>
                 </ul>
               </li>
 
