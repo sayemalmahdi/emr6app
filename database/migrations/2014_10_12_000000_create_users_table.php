@@ -24,6 +24,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('image')->nullable();
             $table->text('about')->nullable();
+            $table->integer('admins')->default(0);
+            $table->integer('settings')->default(0);
+            $table->integer('prescriptions')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

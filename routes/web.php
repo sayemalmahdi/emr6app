@@ -50,6 +50,12 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 
 
 
+	//Add Prescription
+	Route::get('create/prescriptions','Prescriptions\PrescriptionsController@CreatePrescriptions')->name('create.prescriptions');
+	Route::post('store.add.prescription','Prescriptions\PrescriptionsController@StorePrescription')->name('store.add.prescriptions');
+
+
+
 
 
 });
