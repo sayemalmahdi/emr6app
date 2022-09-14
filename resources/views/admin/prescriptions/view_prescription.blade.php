@@ -15,7 +15,7 @@
           <!-- <h6 style="" class="card-body-title"><strong>Create New Child Admin</strong>  </h6> <br><br> -->
           <p class="mg-b-20 mg-sm-b-30" style="padding-left: 15px">
              
-                @if(Auth::user()->product == 1)
+                @if(Auth::user()->prescriptions == 1)
               		<a href="{{ route('admin.all.prescriptions') }}" class="btn btn-sm btn-warning" style="float: right;" >All Prescriptions</a>
                 @else
                 	<h6 class="card-body-title">
