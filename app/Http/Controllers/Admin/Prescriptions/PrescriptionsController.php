@@ -57,7 +57,7 @@ class PrescriptionsController extends Controller
 
     public function Inactive($id)
     {
-         DB::table('prescriptions')->where('id',$id)->update(['status'=> 0]);
+         DB::table('prescriptions')->where('id',$id)->update(['status'=> 1]);
          $notification=array(
                      'message'=>'Successfully Prescriptions Inactive ',
                      'alert-type'=>'success'
@@ -67,13 +67,25 @@ class PrescriptionsController extends Controller
 
     public function Active($id)
     {
-         DB::table('prescriptions')->where('id',$id)->update(['status'=> 1]);
+         DB::table('prescriptions')->where('id',$id)->update(['status'=> 0]);
          $notification=array(
                      'message'=>'Successfully Prescriptions Aactive ',
                      'alert-type'=>'success'
                     );
          return Redirect()->back()->with($notification);
     }
+
+    public function DeletePrescription($id){
+        DB::table('prescriptions')->where('id',$id)->delete();
+        $notification = array(
+            'message'=>'Prescription Successfully Deleted',
+            'alert-type'=>'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
 
 
 

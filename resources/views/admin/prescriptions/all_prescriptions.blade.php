@@ -15,7 +15,7 @@
          
          <div class="card pd-20 pd-sm-40">
           <h6 class="card-body-title">All Prescriptions List
-          	<a href="{{ route('admin.create.admin') }}" class="btn btn-sm btn-warning" style="float: right;" >Add New</a>
+          	<a href="{{ route('admin.create.prescriptions') }}" class="btn btn-sm btn-warning" style="float: right;" >Add New Prescriptions</a>
           </h6>
           <br>
           <div class="table-wrapper">
@@ -69,12 +69,12 @@
                   <td>
                     <a href="#" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
                   	<a href="#" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                  	<a href="#" class="btn btn-sm btn-warning" id="delete"><i class="fa fa-trash"></i></a>
+                  	<a href="{{ URL::to('admin/delete/prescription/'.$row->id) }}" class="btn btn-sm btn-warning" id="delete"><i class="fa fa-trash"></i></a>
 
                     @if($row->status == 1)
-                      <a href="{{ URL::to('admin/inactive/prescription/'.$row->id) }}" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
-                    @else
                       <a href="{{ URL::to('admin/active/prescription/'.$row->id) }}" class="btn btn-sm btn-success" title="Active"><i class="fa fa-thumbs-up"></i></a>
+                    @else                    
+                      <a href="{{ URL::to('admin/inactive/prescription/'.$row->id) }}" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
                     @endif
 
                   </td>

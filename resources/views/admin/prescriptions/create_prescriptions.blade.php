@@ -12,7 +12,10 @@
 
          <div class="card pd-20 pd-sm-40">
           <!-- <h6 style="" class="card-body-title"><strong>Create New Child Admin</strong>  </h6> <br><br> -->
-          <p class="mg-b-20 mg-sm-b-30" style="padding-left: 15px"><strong>Add Prescription</strong></p> <br>
+          <p class="mg-b-20 mg-sm-b-30" style="padding-left: 15px">
+              <strong>Add Prescription</strong>
+              <a href="{{ route('admin.all.prescriptions') }}" class="btn btn-sm btn-warning" style="float: right;" >All Prescriptions</a>
+          </p> <br>
            <form action="{{ route('admin.store.add.prescriptions') }}" method="post" >
           @csrf
           
