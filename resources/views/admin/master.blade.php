@@ -45,6 +45,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <script src="{{ asset('public/admin/backend/js') }}/metisMenu.min.js"></script>
 <script src="{{ asset('public/admin/backend/js') }}/custom.js"></script>
 <link href="{{ asset('public/admin/backend/css') }}/custom.css" rel="stylesheet">
+
+
+<!-- Toastr Css Link -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+
+
+
 <!--//Metis Menu -->
 <style>
 #chartdiv {
@@ -552,7 +559,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	
 
 
-    <!-- Sweetalert -->
+    <!-- Sweetalert AND Toaster -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
         <script>

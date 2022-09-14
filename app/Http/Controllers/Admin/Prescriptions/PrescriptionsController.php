@@ -59,7 +59,7 @@ class PrescriptionsController extends Controller
     {
          DB::table('prescriptions')->where('id',$id)->update(['status'=> 1]);
          $notification=array(
-                     'message'=>'Successfully Prescriptions Inactive ',
+                     'message'=>'Successfully Prescriptions Active ',
                      'alert-type'=>'success'
                     );
          return Redirect()->back()->with($notification);  
@@ -69,8 +69,8 @@ class PrescriptionsController extends Controller
     {
          DB::table('prescriptions')->where('id',$id)->update(['status'=> 0]);
          $notification=array(
-                     'message'=>'Successfully Prescriptions Aactive ',
-                     'alert-type'=>'success'
+                     'message'=>'Successfully Prescriptions Inactive ',
+                     'alert-type'=>'warning'
                     );
          return Redirect()->back()->with($notification);
     }
