@@ -58,6 +58,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('active/prescription/{id}', 'Prescriptions\PrescriptionsController@Active');
 	Route::get('delete/prescription/{id}','Prescriptions\PrescriptionsController@DeletePrescription');
 	Route::get('view/prescription/{id}','Prescriptions\PrescriptionsController@ViewPrescription');
+	Route::get('edit/prescription/{id}','Prescriptions\PrescriptionsController@EditPrescription');
 
 
 

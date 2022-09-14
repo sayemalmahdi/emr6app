@@ -93,6 +93,13 @@ class PrescriptionsController extends Controller
 
     }
 
+    public function EditPrescription($id)
+    {
+        $prescription=DB::table('prescriptions')->where('id',$id)->first();
+
+        return view('admin.prescriptions.edit_prescription',compact('prescription'));
+    }
+
 
 
 

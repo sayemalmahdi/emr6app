@@ -68,7 +68,7 @@
                   
                   <td>
                     <a href="{{ URL::to('admin/view/prescription/'.$row->id) }}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
-                  	<a href="#" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                  	<a href="{{ URL::to('admin/edit/prescription/'.$row->id) }}" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
                   	<a href="{{ URL::to('admin/delete/prescription/'.$row->id) }}" class="btn btn-sm btn-warning" id="delete"><i class="fa fa-trash"></i></a>
 
                     @if($row->status == 1)
