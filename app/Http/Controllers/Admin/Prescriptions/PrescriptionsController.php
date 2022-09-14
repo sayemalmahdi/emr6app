@@ -85,6 +85,16 @@ class PrescriptionsController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function ViewPrescription($id){
+        $prescription=DB::table('prescriptions')
+                ->where('prescriptions.id',$id)
+                ->first();
+        return view('admin.prescriptions.view_prescription',compact('prescription'));
+
+    }
+
+
+
 
 
 
