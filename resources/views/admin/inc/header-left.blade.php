@@ -64,7 +64,7 @@
                 </a>
                 <ul class="treeview-menu">
                   <li><a href="{{ route('admin.create.prescriptions') }}"><i class="fa fa-angle-right"></i> Add Prescriptions</a></li>
-                  <li><a href="#"><i class="fa fa-angle-right"></i> List Prescriptions</a></li>
+                  <li><a href="{{ route('admin.all.prescriptions') }}"><i class="fa fa-angle-right"></i> List Prescriptions</a></li>
                 </ul>
               </li>
               @else

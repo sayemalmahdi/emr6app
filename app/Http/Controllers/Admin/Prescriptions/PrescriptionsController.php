@@ -49,5 +49,11 @@ class PrescriptionsController extends Controller
         return Redirect()->back()->with($notification);
     }
 
+    public function AllPrescriptions()
+    {
+         $prescription=DB::table('prescriptions')->get();
+         return view('admin.prescriptions.all_prescriptions',compact('prescription'));
+    }
+
 
 }
