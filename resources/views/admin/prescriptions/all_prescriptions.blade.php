@@ -72,9 +72,9 @@
                   	<a href="#" class="btn btn-sm btn-warning" id="delete"><i class="fa fa-trash"></i></a>
 
                     @if($row->status == 1)
-                      <a href="" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
+                      <a href="{{ URL::to('admin/inactive/prescription/'.$row->id) }}" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
                     @else
-                      <a href="" class="btn btn-sm btn-success" title="Active"><i class="fa fa-thumbs-up"></i></a>
+                      <a href="{{ URL::to('admin/active/prescription/'.$row->id) }}" class="btn btn-sm btn-success" title="Active"><i class="fa fa-thumbs-up"></i></a>
                     @endif
 
                   </td>

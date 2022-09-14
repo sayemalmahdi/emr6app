@@ -54,6 +54,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('create/prescriptions','Prescriptions\PrescriptionsController@CreatePrescriptions')->name('create.prescriptions');
 	Route::post('store.add.prescription','Prescriptions\PrescriptionsController@StorePrescription')->name('store.add.prescriptions');
 	Route::get('all/prescriptions','Prescriptions\PrescriptionsController@AllPrescriptions')->name('all.prescriptions');
+	Route::get('inactive/prescription/{id}', 'Prescriptions\PrescriptionsController@Inactive');
+	Route::get('active/prescription/{id}', 'Prescriptions\PrescriptionsController@Active');
 
 
 

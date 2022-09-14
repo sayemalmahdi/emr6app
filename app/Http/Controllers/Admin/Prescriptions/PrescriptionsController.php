@@ -55,5 +55,26 @@ class PrescriptionsController extends Controller
          return view('admin.prescriptions.all_prescriptions',compact('prescription'));
     }
 
+    public function Inactive($id)
+    {
+         DB::table('prescriptions')->where('id',$id)->update(['status'=> 0]);
+         $notification=array(
+                     'message'=>'Successfully Prescriptions Inactive ',
+                     'alert-type'=>'success'
+                    );
+         return Redirect()->back()->with($notification);  
+    }
+
+    public function Active($id)
+    {
+         DB::table('prescriptions')->where('id',$id)->update(['status'=> 1]);
+         $notification=array(
+                     'message'=>'Successfully Prescriptions Aactive ',
+                     'alert-type'=>'success'
+                    );
+         return Redirect()->back()->with($notification);
+    }
+
+
 
 }
