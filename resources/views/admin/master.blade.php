@@ -550,5 +550,56 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
    <script src="{{ asset('public/admin/backend/js') }}/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
 	
+
+
+    <!-- Sweetalert -->
+
+    <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
+        <script>
+            @if(Session::has('message'))
+              var type="{{Session::get('alert-type','info')}}"
+              switch(type){
+                  case 'info':
+                       toastr.info("{{ Session::get('message') }}");
+                       break;
+                  case 'success':
+                      toastr.success("{{ Session::get('message') }}");
+                      break;
+                  case 'warning':
+                     toastr.warning("{{ Session::get('message') }}");
+                      break;
+                  case 'error':
+                      toastr.error("{{ Session::get('message') }}");
+                      break;
+              }
+            @endif
+         </script>  
+
+         <script>  
+             $(document).on("click", "#delete", function(e){
+                 e.preventDefault();
+                 var link = $(this).attr("href");
+                    swal({
+                      title: "Are you Want to delete?",
+                      text: "Once Delete, This will be Permanently Delete!",
+                      icon: "warning",
+                      buttons: true,
+                      dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                      if (willDelete) {
+                           window.location.href = link;
+                      } else {
+                        swal("Safe Data!");
+                      }
+                    });
+                });
+        </script>
+    
+    <!--End Sweetalert -->
+
+
+
+
 </body>
 </html>
