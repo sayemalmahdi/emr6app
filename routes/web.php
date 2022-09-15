@@ -29,8 +29,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//Admin Route
-Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
+	//Admin Route
+	Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 	
@@ -50,7 +50,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 
 
 
-	//Add Prescription
+	//Prescription CRUD
 	Route::get('create/prescriptions','Prescriptions\PrescriptionsController@CreatePrescriptions')->name('create.prescriptions');
 	Route::post('store.add.prescription','Prescriptions\PrescriptionsController@StorePrescription')->name('store.add.prescriptions');
 	Route::get('all/prescriptions','Prescriptions\PrescriptionsController@AllPrescriptions')->name('all.prescriptions');
@@ -59,6 +59,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('delete/prescription/{id}','Prescriptions\PrescriptionsController@DeletePrescription');
 	Route::get('view/prescription/{id}','Prescriptions\PrescriptionsController@ViewPrescription');
 	Route::get('edit/prescription/{id}','Prescriptions\PrescriptionsController@EditPrescription');
+	Route::post('update/prescription/{id}','Prescriptions\PrescriptionsController@UpdatePrescription');
 
 
 

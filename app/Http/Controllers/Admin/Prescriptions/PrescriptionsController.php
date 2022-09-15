@@ -100,6 +100,44 @@ class PrescriptionsController extends Controller
         return view('admin.prescriptions.edit_prescription',compact('prescription'));
     }
 
+    public function UpdatePrescription(Request $request,$id)
+    {
+         $data=array();
+         $data['firstname']=$request->firstname;
+         $data['lastname']=$request->lastname;
+         $data['phone']=$request->phone;
+         $data['dob']=$request->dob;
+         $data['patient_weight']=$request->patient_weight;
+         $data['blood_pressure']=$request->blood_pressure;
+         $data['pulse']=$request->pulse;
+         $data['patient_complaint']=$request->patient_complaint;
+         $data['notes']=$request->notes;
+         $data['duration']=$request->duration;
+         $data['investigation_name']=$request->investigation_name;
+         $data['instrustion']=$request->instrustion;
+         $data['diagnosis_name']=$request->diagnosis_name;
+         $data['comment']=$request->comment;
+         $data['visit_after_days']=$request->visit_after_days;
+         $data['medicines']=$request->medicines;
+        
+        $update=DB::table('prescriptions')->where('id',$id)->update($data);
+        if ($update) {
+             $notification=array(
+                     'message'=>'Prescriptions Updated ',
+                     // 'message'=>'Successfully Prescriptions Updated ',
+                     'alert-type'=>'success'
+                    );
+             return Redirect()->route('admin.all.prescriptions')->with($notification);
+
+        }else{
+            $notification=array(
+                     'message'=>'Nothing To Updated ',
+                     'alert-type'=>'error'
+                    );
+             return Redirect()->route('admin.all.prescriptions')->with($notification);
+        }
+    }
+
 
 
 
